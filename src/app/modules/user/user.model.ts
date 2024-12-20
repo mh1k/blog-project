@@ -1,0 +1,55 @@
+import { model, Schema } from 'mongoose';
+import { IUser, IUserModel } from './user.interface';
+import bcrypt from 'bcrypt';
+import config from '../../config';
+
+const userSchema = new Schema<IUser,IUserModel>(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      trim: true,
+      required: true,
+      select: 0,
+    },
+    role: {
+      type: String,
+      enum: ['admin', 'user'],
+      default: 'user',
+    },
+    isBlocked: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+userSchema.pre('save', async function (next) {
+  //hashing password and save into DB
+  this.password = await bcrypt.hash(
+    this.password,
+    Number(config.bcrypt_salt_rounds),
+  );
+  next();
+});
+
+userSchema.post('save', async function (doc, next) {
+  doc.password = '';
+  next();
+});
+
+userSchema.statics.isUserExistsByEmail = async function (email: string) {
+  return await UserModel.findOne({ email }).select('+password');
+};
+export const UserModel = model<IUser,IUserModel>('User', userSchema);
