@@ -14,6 +14,8 @@ app.use(cors());
 // application route
 app.use('/api/auth', AuthRoutes);
 app.use('/api/blogs', BlogRoutes);
+app.use('/api/admin', AuthRoutes);
+app.use('/api/admin', BlogRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello  from Blog Project');

@@ -10,5 +10,18 @@ const createBlogValidationSchema = z.object({
       .min(10, { message: 'Content must be at least 10 characters' }),
   }),
 });
+const updateBlogValidationSchema = z.object({
+  body: z.object({
+    title: z
+      .string({ required_error: 'Title is Required' })
+      .min(5, { message: 'Title must be at least 5 characters' }).optional(),
+    content: z
+      .string({ required_error: 'Content is Required' })
+      .min(10, { message: 'Content must be at least 10 characters' }).optional(),
+  }),
+});
 
-export const blogValidation = { createBlogValidationSchema };
+export const blogValidation = {
+  createBlogValidationSchema,
+  updateBlogValidationSchema,
+};

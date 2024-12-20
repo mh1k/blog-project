@@ -31,7 +31,20 @@ const login = catchAsync(async (req, res) => {
   });
 });
 
+const blockUser = catchAsync(async (req, res) => {
+    const userId = req.params.userId;
+    await AuthService.blockUser(userId);
+    
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'User blocked successfully',
+        data: '',
+    });
+});
+
 export const AuthController = {
   register,
   login,
+  blockUser,
 };
