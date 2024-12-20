@@ -3,7 +3,8 @@ import sendResponse from '../../utils/sendResponse';
 import { BlogService } from './blog.service';
 
 const createBlog = catchAsync(async (req, res) => {
-  const result = await BlogService.createBlogIntoDB(req.body);
+    const user = req.user;
+  const result = await BlogService.createBlogIntoDB(req.body,user);
   sendResponse(res, {
     statusCode: 201,
     success: true,

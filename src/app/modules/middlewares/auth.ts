@@ -21,7 +21,6 @@ const auth = (...requiredRoles: TUserRole[]) => {
       config.jwt_access_secret as string,
     ) as JwtPayload;
     const { role, email } = decoded;
-
     const user = await UserModel.isUserExistsByEmail(email);
     if (!user) {
       throw new AppError(httpStatus.NOT_FOUND, 'This user is not found');
