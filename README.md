@@ -119,7 +119,7 @@ in **`package.json`** file
 
 ### **Public API**
 
-With search, sortBy, sortOrder, and filter(author id)
+With search, sortBy, sortOrder, and filter(author id) <br>
 `/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=authorId`
 
 | method      | endpoint                               | deatails    |
