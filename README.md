@@ -54,7 +54,7 @@ This project is a backend implementation for a blogging platform. Users can writ
 1. Clone the Repository
     ```
    git clone https://github.com/mh1k/blog-project.git
-   cd stationery-shop
+   cd blog-project
    ```
 2. Install Dependencies
    ```
@@ -66,9 +66,9 @@ This project is a backend implementation for a blogging platform. Users can writ
    NODE_ENV = delvelopment
    PORT=5000
    DATABASE_URL= mongoDB URI
-   BCRYPT_SALT_ROUNDS = 12 (example)
-   JWT_ACCESS_SECRET = sdfsd12121sdsdf151521sdfsdf (example)
-   JWT_ACCESS_EXPIRED_IN = 10d (example)
+   BCRYPT_SALT_ROUNDS = bcrypt salt rounds
+   JWT_ACCESS_SECRET = jwt access secret code
+   JWT_ACCESS_EXPIRED_IN = jwt access expired time
 
    ```
 4. Run the application in the development Mode
@@ -109,7 +109,7 @@ in **`package.json`** file
 |-------------|----------------------------------------|-------------|
 | POST        | **`/api/auth/register`**                    | register the user |
 | POST        | **`/api/auth/login`**                    | login the user and collect the token |
-| POST        | **`/api/blogs`**                    | create blog with Authorization token(only when loggedin) |
+| POST        | **`/api/blogs`**                    | create blog with givint Authorization token in headers ``Authorization: Bearer <token>`` (only when loggedin) |
 
 **Admin**
 
