@@ -106,7 +106,7 @@ in **`package.json`** file
 |**`npm run format`**     | using prettier format the code |
 
 ---
-### **Available Endpoints**
+## **Available Endpoints :**
 ### **User**
 
 | method      | endpoint                               | deatails    |
