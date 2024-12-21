@@ -130,6 +130,15 @@ With search, sortBy, sortOrder, and filter(author id) <br>
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
 | GET        | `/api/blogs`                    | Public get all the blogs and use query |
+
+
+### **Public API**
+
+| method      | endpoint                               | deatails    |
+|-------------|----------------------------------------|-------------|
+| PATCH        | `/api/admin/users/:userId/block`                    | Admin can block user by user Id with giving Authorization token in Request Headers ``Authorization: Bearer <token>`` (only when loggedin) |
+| DELETE        | `/api/admin/blogs/:id`                    | Admin can delete blog by blog Id with giving Authorization token in Request Headers ``Authorization: Bearer <token>`` (only when loggedin) |
+
 ---
 
 ### Thank you 🙂 Stay positive, keep learning, and always strive for excellence 
