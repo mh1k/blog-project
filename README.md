@@ -109,7 +109,10 @@ in **`package.json`** file
 |-------------|----------------------------------------|-------------|
 | POST        | **`/api/auth/register`**                    | register the user |
 | POST        | **`/api/auth/login`**                    | login the user and collect the token |
-| POST        | **`/api/blogs`**                    | create blog with givint Authorization token in headers ``Authorization: Bearer <token>`` (only when loggedin) |
+| POST        | **`/api/blogs`**                    | create blog with givint Authorization token in headers (only when loggedin)
+```
+Authorization: Bearer <token>
+``` |
 
 **Admin**
 
