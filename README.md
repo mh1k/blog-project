@@ -43,8 +43,12 @@ This project is a backend implementation for a blogging platform. Users can writ
 
  - Public API for reading blogs with options for search, sortBy, sortOrder and Author filtering.
 
-
----
+### Error Handling
+ - Validation Error
+ - Authentication Error
+ - Authorization Error
+ - Resource Not Found
+ - Internal Server Error
 
 
 ---
@@ -109,10 +113,7 @@ in **`package.json`** file
 |-------------|----------------------------------------|-------------|
 | POST        | **`/api/auth/register`**                    | register the user |
 | POST        | **`/api/auth/login`**                    | login the user and collect the token |
-| POST        | **`/api/blogs`**                    | create blog with givint Authorization token in headers (only when loggedin)
-```
-Authorization: Bearer <token>
-``` |
+| POST        | **`/api/blogs`**                    | create blog with givint Authorization token in headers ``Authorization: Bearer <token>`` (only when loggedin) |
 
 **Admin**
 
