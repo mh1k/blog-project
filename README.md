@@ -111,9 +111,11 @@ in **`package.json`** file
 
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
-| POST        | **`/api/auth/register`**                    | register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
+| POST        | **`/api/auth/register`**                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
 | POST        | **`/api/auth/login`**                    | login the user with ```{"email":"example@email.com", "password":"examplepassword"} ``` and collect the token from the response|
-| POST        | **`/api/blogs`**                    | create blog with giving ```{"title":"My Blog", "content":"content of my blog"} ``` Authorization token in headers ``Authorization: Bearer <token>`` (only when loggedin) |
+| POST        | **`/api/blogs`**                    | Create blog with giving ```{"title":"My Blog", "content":"content of my blog"} ``` and Authorization token in Request Headers ``Authorization: Bearer <token>`` (only when loggedin) |
+| PATCH       | **`/api/blogs/:id`**                    | Update the blog with giving ```{"title":"My Blog", "content":"content of my blog"} ``` and Authorization token in Request headers ``Authorization: Bearer <token>`` (only when loggedin and update only user's own blog) |
+| DELETE       | **`/api/blogs/:id`**                    | Delete the blog by blog Id with giving Authorization token in Request headers ``Authorization: Bearer <token>`` (only when loggedin and delete only user's own blog) |
 
 **Admin**
 
