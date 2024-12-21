@@ -119,9 +119,12 @@ in **`package.json`** file
 
 ### **Public API**
 
+With search, sortBy, sortOrder, and filter(author id)
+`/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=authorId`
+
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
-| GET        | `/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=authorId`                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
+| GET        | `/api/blogs`                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
 ---
 
 ### Thank you 🙂 Stay positive, keep learning, and always strive for excellence 
