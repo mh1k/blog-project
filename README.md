@@ -52,6 +52,14 @@ This project is a backend implementation for a blogging platform. Users can writ
 
 
 ---
+## **Entity Relationship ER Diagram**
+
+![ER Diagram](./blog_project_ER_diagram.png)
+
+*Description*: This diagram represents the entities and their relationships in the system.
+
+---
+
 
 ### Setup Instruction for run the project locally
 
@@ -132,7 +140,7 @@ With search, sortBy, sortOrder, and filter(author id) <br>
 | GET        | `/api/blogs`                    | Public get all the blogs and use query |
 
 
-### **Public API**
+### **Admin**
 
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
