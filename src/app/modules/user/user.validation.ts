@@ -9,7 +9,7 @@ const registerUserValidationSchema = z.object({
       }),
     email: z
       .string({ required_error: 'Email is Required' })
-      .email({ message: 'Invalid Email' }),
+      .email({ message: 'Please use a valid email address' }),
     password: z
       .string({ required_error: 'Password is Required' })
       .min(6, { message: 'Password must be at least 6 characters' })

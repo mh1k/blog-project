@@ -2,6 +2,7 @@ import catchAsync from '../../utils/catchAsync';
 import sendResponse from '../../utils/sendResponse';
 import { BlogService } from './blog.service';
 
+
 const createBlog = catchAsync(async (req, res) => {
   const result = await BlogService.createBlogIntoDB(req.body, req.user);
   sendResponse(res, {

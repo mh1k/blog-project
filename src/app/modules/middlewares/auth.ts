@@ -16,22 +16,33 @@ const auth = (...requiredRoles: TUserRole[]) => {
       throw new AppError(httpStatus.UNAUTHORIZED, 'you are not authorized');
     }
     const token = bearerToken.split(' ')?.[1];
+
+    // checking is token valid
     const decoded = jwt.verify(
       token,
       config.jwt_access_secret as string,
     ) as JwtPayload;
-    const { role, email } = decoded;
+    const { role, email} = decoded;
+
+
+    // checking user is exists
     const user = await UserModel.isUserExistsByEmail(email);
     if (!user) {
       throw new AppError(httpStatus.NOT_FOUND, 'This user is not found');
     }
+
+    // checking user is blocked
     const userStatus = user.isBlocked;
     if (userStatus) {
       throw new AppError(httpStatus.FORBIDDEN, 'This user has been blocked');
     }
+
+    // checking user role
     if (requiredRoles && !requiredRoles.includes(role)) {
       throw new AppError(httpStatus.UNAUTHORIZED, 'you are not authorized');
     }
+
+    // set user to req.user
     req.user = decoded as JwtPayload;
     next();
   });

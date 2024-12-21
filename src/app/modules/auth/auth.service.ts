@@ -53,17 +53,7 @@ const login = async (payload: ILogin) => {
   };
 };
 
-const blockUser = async (userId: string) => {
-  const user = await UserModel.findById(userId);
-  if (!user) {
-    throw new AppError(httpStatus.NOT_FOUND, 'User not found');
-  }
-  const result = await UserModel.findByIdAndUpdate(userId, { isBlocked: true });
-  return result;
-};
-
 export const AuthService = {
   register,
   login,
-  blockUser
 };

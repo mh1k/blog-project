@@ -3,6 +3,7 @@ import { IBlog } from './blog.interface';
 import { BlogModel } from './blog.model';
 import AppError from '../errors/AppError';
 
+// get all blogs from db with search, sort and filter
 const getBlogsFromDB = async (query: Record<string, unknown>) => {
   let search = ''; // set default value
 
@@ -21,7 +22,7 @@ const getBlogsFromDB = async (query: Record<string, unknown>) => {
     select: '-isBlocked -email -role',
   });
 
-  // sorting
+  // sorting by title or createdAt
   const sortBy = ['title', 'createdAt'];
   const sortOrder = ['asc', 'desc'];
   if (query.sortBy && query.sortOrder) {
@@ -43,15 +44,18 @@ const getBlogsFromDB = async (query: Record<string, unknown>) => {
   const filterQuery = await sortQuery.find(
     query?.filter ? { author: query.filter } : {},
   );
+  
   return filterQuery;
 };
 
+// create blog into db
 const createBlogIntoDB = async (payload: IBlog, user: JwtPayload) => {
   payload.author = user.userId;
   const result = (await BlogModel.create(payload)).populate('author');
   return result;
 };
 
+// update blog into db
 const updateBlogIntoDB = async (
   payload: IBlog,
   blogId: string,
@@ -70,6 +74,7 @@ const updateBlogIntoDB = async (
   return result;
 };
 
+// delete blog from db
 const deleteBlogFromDB = async (blogId: string, user: JwtPayload) => {
   const blog = await BlogModel.findOne({ _id: blogId, author: user.userId });
   if (!blog) {
@@ -79,6 +84,7 @@ const deleteBlogFromDB = async (blogId: string, user: JwtPayload) => {
   return result;
 };
 
+// delete blog by admin from db
 const deleteBlogByAdminFromDB = async (blogId: string) => {
   const result = await BlogModel.findByIdAndDelete(blogId);
   if (!result) {
