@@ -1,4 +1,5 @@
-# Blog Project ( Live link : https://blog-project-plum-ten.vercel.app/ )
+# Blog Project 
+### ( Live link : https://blog-project-plum-ten.vercel.app/ )
 
 This project is a backend implementation for a blogging platform. Users can write, update, and delete blogs, while admins have additional privileges to manage users and their blogs. The system includes secure authentication, role-based access control, and a public API for viewing blogs with search, sort, and filter functionalities.
 
