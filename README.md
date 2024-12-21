@@ -107,7 +107,7 @@ in **`package.json`** file
 
 ---
 ### **Available Endpoints**
-**User**
+#### **User**
 
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
