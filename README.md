@@ -112,8 +112,8 @@ in **`package.json`** file
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
 | POST        | **`/api/auth/register`**                    | register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
-| POST        | **`/api/auth/login`**                    | login the user with ```{"email":"example@email.com", "password":"examplepassword"} ``` and collect the token |
-| POST        | **`/api/blogs`**                    | create blog with giving Authorization token in headers ``Authorization: Bearer <token>`` (only when loggedin) |
+| POST        | **`/api/auth/login`**                    | login the user with ```{"email":"example@email.com", "password":"examplepassword"} ``` and collect the token from the response|
+| POST        | **`/api/blogs`**                    | create blog with giving ```{"title":"My Blog", "content":"content of my blog"} ``` Authorization token in headers ``Authorization: Bearer <token>`` (only when loggedin) |
 
 **Admin**
 
