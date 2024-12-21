@@ -121,7 +121,7 @@ in **`package.json`** file
 
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
-| GET        | `/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=60b8f42f9c2a3c9b7cbd4f18`                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
+| GET        | `/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=authorId`                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
 ---
 
 ### Thank you 🙂 Stay positive, keep learning, and always strive for excellence 
