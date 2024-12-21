@@ -117,9 +117,11 @@ in **`package.json`** file
 | PATCH       | **`/api/blogs/:id`**                    | Update the blog with giving ```{"title":"My Blog", "content":"content of my blog"} ``` and Authorization token in Request headers ``Authorization: Bearer <token>`` (only when loggedin and update only user's own blog) |
 | DELETE       | **`/api/blogs/:id`**                    | Delete the blog by blog Id with giving Authorization token in Request headers ``Authorization: Bearer <token>`` (only when loggedin and delete only user's own blog) |
 
-**Admin**
+### **Public API**
 
-
+| method      | endpoint                               | deatails    |
+|-------------|----------------------------------------|-------------|
+| GET        | `/api/blogs` and with search, sortBy, sortOrder and filter `/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=60b8f42f9c2a3c9b7cbd4f18`                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
 ---
 
 ### Thank you 🙂 Stay positive, keep learning, and always strive for excellence 
