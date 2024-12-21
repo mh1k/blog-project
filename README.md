@@ -120,11 +120,16 @@ in **`package.json`** file
 ### **Public API**
 
 With search, sortBy, sortOrder, and filter(author id) <br>
-`/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=authorId`
+`/api/blogs?search=technology&sortBy=createdAt&sortOrder=desc&filter=authorId` <br>
+#### Query Parameters:
+ - search: Search blogs by title or content.
+ - sortOrder: asc (ascending) or desc (descending).
+ - sortBy: Sort blogs by specific fields createdAt or title.
+ - filter: Filter blogs by author ID.
 
 | method      | endpoint                               | deatails    |
 |-------------|----------------------------------------|-------------|
-| GET        | `/api/blogs`                    | Register the user ```{"name" : "Mr Prgrammer","email" : "example@email.com", "password" : "examplepassword"}``` giving these information in Request Body |
+| GET        | `/api/blogs`                    | Public get all the blogs and use query |
 ---
 
 ### Thank you 🙂 Stay positive, keep learning, and always strive for excellence 
